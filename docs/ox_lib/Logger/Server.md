@@ -12,11 +12,12 @@ set datadog:site "datadoghq.com"
 ```
 
 ```lua
-lib.logger(source, event, message, ...)
+lib.logger(source, event, message, status, ...)
 ```
 * source: `string` or `number`
 * event: `string`
 * message: `string`
+* status: `string`
 * ...: `string`
 
 
@@ -26,7 +27,7 @@ Additional arguments are converted into tags for additional filtering and search
 
 ```lua
 local vehicle = Ox.CreateVehicle(false, `sultanrs`, vec(-56.479122, -1116.870362, 26.432250, 0.000030517578))
-lib.logger(-1, 'CreateVehicle', json.encode(vehicle))
+lib.logger(-1, 'CreateVehicle', json.encode(vehicle), "info")
 ```
 
 ![image](https://user-images.githubusercontent.com/65407488/165902870-4c938da7-a068-4d19-af5b-20402c325e87.png)
